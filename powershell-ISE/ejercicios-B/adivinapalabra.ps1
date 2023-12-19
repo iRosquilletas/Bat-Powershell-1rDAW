@@ -2,15 +2,14 @@
 Write-Host "---- Adivina la Palabra ----"
 $array = 'hola'
 
-$random = Write-Host $array[0][0]  $array[1][0]  $array[2][0]  $array[3][0]
-Write-Host $random
+
 
 $a = Read-Host "Dime una letra: "
 $z = @()
 
 do {
 
-    if ($z -eq $random){
+    if ($z -eq 'h o l a'){
         Write-Host "Lo conseguiste"
         break
     }
