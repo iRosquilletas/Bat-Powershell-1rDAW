@@ -3,7 +3,7 @@ Write-Host ---- Calculadora ----
 While ($true) {
     [int]$a = Read-Host "Introduce el primer número" 
     [int]$b = Read-Host "Introduce el segundo número"
-    $c = Read-Host "Qué operación quieres? + - * /"
+    $c = Read-Host "Qué operación quieres? + - * / potencia"
 
     switch ($c) {
     "+" {
@@ -28,6 +28,13 @@ While ($true) {
         write-host "Resultado: "$d
 
     }
+    "potencia" {
+    $d = [math]::Pow($a,$b)
+
+    Write-Host "Resultado: "$d
+    
+    }
+
     default {
         Write-Host "No valido"
         Write-Host " "
