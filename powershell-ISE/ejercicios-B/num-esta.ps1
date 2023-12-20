@@ -16,14 +16,21 @@ Write-Host $z
 
 do{
     $pregunta = Read-Host "Dime el número que creas que esté: "
-    if ($pregunta -eq $z) {
+    if ($z -contains $pregunta) {
         Write-Host "El número está"
     } else {
         Write-Host "No está"
     
     }
+    
+    $d = Read-Host "Quieres seguir?(Y/N): "
+    if ($d -ne "y"){
+        break
+    }
 
 } while ($true)
+
+write-host "Los números era: "$z
 
 
 

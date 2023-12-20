@@ -1,31 +1,35 @@
 ﻿clear-host
 Write-Host "---- Adivina la Palabra ----"
-$array = 'hola'
+$array = @()
+for ($i = 0; $i -lt 4; $i++){
+    $jajaja = Read-Host "Dime letra por letra que palabra quieres: "
+    $array += $jajaja
 
+}
 
+write-host $array
 
-$a = Read-Host "Dime una letra: "
 $z = @()
 
 do {
 
-    if ($z -eq 'h o l a'){
+    if ($z -contains $array){
         Write-Host "Lo conseguiste"
         break
     }
 
     $a = Read-Host "Dime una letra: "
 
-    if ($a -eq $array[0][0]){
+    if ($a -contains $array[0][0]){
         $z += $a
     }
-    if ($a -eq $array[1][0]){
+    if ($a -contains $array[1][0]){
         $z += $a
     }
-    if ($a -eq $array[2][0]){
+    if ($a -contains $array[2][0]){
         $z += $a
     }
-    if ($a -eq $array[3][0]){
+    if ($a -contains $array[3][0]){
         $z += $a
     }
     write-host $z
