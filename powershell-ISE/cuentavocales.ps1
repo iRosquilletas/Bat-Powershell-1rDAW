@@ -1,15 +1,17 @@
-﻿clear-host
-Write-Host "Contador de vocales"
+﻿# Solicitar al usuario que introduzca una cadena
+$cadena = Read-Host "Introduce una cadena"
 
-$a = Read-Host "Introduce la palabra/oración " | Out-String
-$vocales = "aeiou"
-$contador = 0
-foreach ($letra in $a){
-    if ($vocales -contains $letra){
-        $contador++
-        write-host "hola"
-        }
-        write-host "jajaj"
+# Inicializar contador de vocales
+$contadorVocales = 0
+
+# Iterar sobre cada caracter en la cadena
+foreach ($caracter in $cadena.ToCharArray()) {
+    # Verificar si el caracter es una vocal (mayúscula o minúscula)
+    if ($caracter -match "[aeiouAEIOU]") {
+        $contadorVocales++
+    }
 }
-write-host $letra
-Write-Host $contador
+
+# Mostrar el resultado
+Write-Host "Número de vocales en la cadena: $contadorVocales"
+
