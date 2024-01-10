@@ -1,4 +1,49 @@
-﻿do{
+﻿function Test-passwd {
+    param (
+        [string]$password
+    )
+
+ 
+    if ($password.Length -lt 8) {
+        Write-Host "La contraseña debe tener al menos 8 caracteres."
+        return $false
+    }
+
+    if ($password -notmatch "[a-z]") {
+        Write-Host "La contraseña debe contener al menos una letra mayúscula."
+        return $false
+    }
+
+    
+    if ($password -notmatch "[A-Z]") {
+        Write-Host "La contraseña debe contener al menos una letra minúscula."
+        return $false
+    }
+    
+  
+    if ($password -notmatch "\d") {
+        Write-Host "La contraseña debe contener al menos un número."
+        return $false
+    }
+
+   
+    if ($password -notmatch "[^a-zA-Z0-9]") {
+        Write-Host "La contraseña debe contener al menos un carácter especial."
+        return $false
+    }
+    
+    if ($passdword -eq "['-!#$%&()*,./:;?@[]^_`{|}~+<=>]"){
+        Write-Host "La contraseña no puede contener ese caracter."
+        return $false
+    }
+
+
+    Write-Host "La contraseña cumple con los requisitos de complejidad."
+    return $true
+}
+
+
+do{
 clear-host
 Write-Host "---- Menu ----"
 Write-Host "1. Listar los usuario del sistema"
@@ -29,6 +74,9 @@ switch($a) {
     "2"{
         $name =  Read-Host "Introduce el nombre"
         $password = Read-Host "Introduce la contraseña "-AsSecureString
+        while ($password -ne $true){
+        Test-passwd -password $password 
+        }
         $completeName = Read-Host "Introduce el nombre completo"
         $description = Read-Host "Introuce la descripción de tu cuenta"
         New-LocalUser $name -Password $password -FullName $completename -Description $description
@@ -38,6 +86,7 @@ switch($a) {
     }
     "3"{
         $password = Read-Host "Introduce la contraseña" -AsSecureString
+        Test-passwd -password $password
         Set-LocalUser -Name "UsuarioExistente" -Password $password -AsPlainText -Force
     
     
