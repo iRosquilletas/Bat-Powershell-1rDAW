@@ -2,21 +2,20 @@
     param (
         [string]$password
     )
-
- 
+    
     if ($password.Length -lt 8) {
         Write-Host "La contraseña debe tener al menos 8 caracteres."
         return $false
     }
 
-    if ($password -notmatch "[a-z]") {
-        Write-Host "La contraseña debe contener al menos una letra mayúscula."
+    if ($password -cnotmatch "[a-z]") {
+        Write-Host "La contraseña debe contener al menos una letra minúscula."
         return $false
     }
 
     
-    if ($password -notmatch "[A-Z]") {
-        Write-Host "La contraseña debe contener al menos una letra minúscula."
+    if ($password -cnotmatch "[A-Z]") {
+        Write-Host "La contraseña debe contener al menos una letra mayuscula."
         return $false
     }
     
@@ -31,11 +30,7 @@
         Write-Host "La contraseña debe contener al menos un carácter especial."
         return $false
     }
-    
-    if ($passdword -eq "['-!#$%&()*,./:;?@[]^_`{|}~+<=>]"){
-        Write-Host "La contraseña no puede contener ese caracter."
-        return $false
-    }
+
 
 
     Write-Host "La contraseña cumple con los requisitos de complejidad."
@@ -73,15 +68,16 @@ switch($a) {
     }
     "2"{
         $name =  Read-Host "Introduce el nombre"
-        $password = Read-Host "Introduce la contraseña "-AsSecureString
-        while ($password -ne $true){
-        Test-passwd -password $password 
+        $password = Read-Host "Introduce la contraseña"
+        if (Test-passwd $password){
+            New-LocalUser -Name $nombre -Password (ConvertTo-SecureString -AsPlainText $pass -Force)
+            Add-LocalGroupMember -Group "Usuarios" -Member $name
+            $completeName = Read-Host "Introduce el nombre completo"
+            $description = Read-Host "Introuce la descripción de tu cuenta"
+        } else{
+            Write-Host "La contraseña no es segura"
+        
         }
-        $completeName = Read-Host "Introduce el nombre completo"
-        $description = Read-Host "Introuce la descripción de tu cuenta"
-        New-LocalUser $name -Password $password -FullName $completename -Description $description
-        Add-LocalGroupMember -Group "Usuarios" -Member $name
-        Get-LocalUser
         pause
     }
     "3"{
