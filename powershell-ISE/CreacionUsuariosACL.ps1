@@ -15,11 +15,18 @@ $usuariosIES = "Jaime", "Belén", "Marta", "Luis", "Carlos", "Juan"
     Add-LocalGroupMember -Group "IES" -Member $usuariosIES
 
 $usuariosDAM = "Marta", "Belén"
-foreach ($usuario in $usuariosDAM){
-    Add-LocalGroupMember -Group "DAM" -Member $usuario
-}
+    Add-LocalGroupMember -Group "DAM" -Member $usuariosDAM
 
 $usuariosDAW = "Luis", "Carlos"
     Add-LocalGroupMember -Group "DAW" -Member $usuariosDAW
+
+
+
+#$usuariosDAM = "Marta", "Belén"
+#foreach ($usuario in $usuariosDAM){
+#    Add-LocalGroupMember -Group "DAM" -Member $usuario
+#}
+
+
 
 
