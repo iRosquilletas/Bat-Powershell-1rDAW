@@ -137,7 +137,7 @@ switch($a) {
 
     "11"{
         $group = Read-Host "Introduce el nombre del grupo"
-        $user = Read-Host "Introduce el nombre del usuario que quieras añadir"       
+        $user = Read-Host "Introduce el nombre del usuario que quieras borrar"       
         Remove-LocalGroupMember -Group $group -Member $user
 
     }
