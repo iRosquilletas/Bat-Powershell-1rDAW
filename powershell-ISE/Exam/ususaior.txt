@@ -1,0 +1,6 @@
+# Obtener el nombre del usuario y del equipo
+$nombreUsuario = $env:USERNAME
+$nombreEquipo = $env:COMPUTERNAME
+
+Write-Host "Nombre de usuario: $nombreUsuario"
+Write-Host "Nombre del equipo: $nombreEquipo"

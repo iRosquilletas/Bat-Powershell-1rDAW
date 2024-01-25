@@ -1,0 +1,2 @@
+1- HACER QUE NO SE SE PUEDA PONER UN USB
+2- Restringir el acceso a la herramienta de Administración de Discos:

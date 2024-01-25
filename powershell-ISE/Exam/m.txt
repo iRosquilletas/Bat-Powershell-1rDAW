@@ -1,0 +1,3 @@
+gpedit.msc
+rsop.msc
+gperult /h

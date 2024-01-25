@@ -1,0 +1,15 @@
+-eq Igual
+-ne Distinto de
+-ge Mayor o igual
+-gt Mayor que
+-lt Menor que
+-le Menor o Igual que
+-like Wildcard comparison
+-notlike Expresion regular de comparación Wildcard
+-match Expresion regular de comparación
+-notmatch Expresion regular de comparación
+-replace Operador de reemplazo
+-contains Mira si contiene la parte que solicitamos
+–notcontains Igual que el anterior pero invertido.
+-in Como –contains, pero con los operadores invertidos.(PowerShell 3.0)
+-notin Como –notcontains, pero con los operadores invertidos.(PowerShell 3.0)

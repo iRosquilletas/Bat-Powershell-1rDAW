@@ -1,0 +1,27 @@
+1-Ejecutable del servicio del firewall de Windows:
+
+El servicio del firewall de Windows en sistemas operativos Windows más recientes, como Windows 10 y Windows Server 2016/2019, 
+utiliza el servicio llamado mpssvc. El ejecutable asociado es mpssvc.exe.
+
+2-Dependencias del servicio del firewall de Windows:
+
+El servicio del firewall de Windows (mpssvc) depende de otros servicios y componentes del sistema operativo. Las dependencias exactas pueden variar 
+según la configuración y la versión del sistema operativo, pero algunos de los servicios relacionados incluyen:
+Servicio de configuración de seguridad de Windows (wscsvc): Proporciona la infraestructura de seguridad necesaria para el firewall.
+Proveedor de eventos de seguridad (seclogon): Necesario para el registro de eventos de seguridad.
+Servicio de perfil de usuario (profsvc): Necesario para el manejo de perfiles de usuario, que también puede ser relevante para la configuración del firewall.
+
+3-Proceso svchost en Windows:
+
+-svchost.exe es un proceso del sistema operativo Windows que actúa como un contenedor para servicios del sistema. 
+En lugar de ejecutar varios servicios directamente como procesos independientes, Windows utiliza svchost.exe para alojar
+ varios servicios bajo un único proceso. Esto ayuda a mejorar la eficiencia y la gestión de recursos del sistema.
+
+-Puedes ver múltiples instancias de svchost.exe en el Administrador de tareas, cada una ejecutando un grupo específico de servicios. 
+Cada instancia está asociada con un grupo de servicios y se ejecuta con privilegios de sistema.
+
+-Para ver qué servicios están asociados con cada instancia de svchost.exe, puedes utilizar el siguiente comando en la línea de comandos:
+bash
+Copy code
+tasklist /svc /fi "imagename eq svchost.exe"
+Es importante mencionar que la información proporcionada aquí puede variar según la versión específica del sistema operativo y su configuración.
