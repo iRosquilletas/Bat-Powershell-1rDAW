@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ermuza.Camarero2Controller">
+   <children>
+      <TableView fx:id="tablaComandas" layoutX="38.0" layoutY="110.0" prefHeight="251.0" prefWidth="524.0">
+         <columns>
+            <TableColumn fx:id="numComandaCol" prefWidth="111.0" text="NumComanda" />
+            <TableColumn fx:id="idPlatoCol" prefWidth="90.0" text="IdPlato" />
+            <TableColumn fx:id="cantidadCol" prefWidth="181.0" text="Cantidad" />
+            <TableColumn fx:id="estadoCol" prefWidth="141.0" text="Estado" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
