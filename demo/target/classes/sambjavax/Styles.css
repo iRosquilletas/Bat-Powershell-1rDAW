@@ -1,0 +1,32 @@
+/* Styles.css */
+
+.root {
+    -fx-background-color: #bb3636; /* Color de fondo */
+}
+
+Anchor {
+    -fx-background-color: #4CAF50; /* Color de fondo del botón */
+    -fx-text-fill: white; /* Color del texto del botón */
+    -fx-font-size: 14px; /* Tamaño de fuente */
+    -fx-pref-width: 120px; /* Ancho preferido del botón */
+    -fx-pref-height: 40px; /* Altura preferida del botón */
+}
+
+Text {
+    -fx-fill: #333; /* Color del texto */
+    -fx-font-size: 18px; /* Tamaño de fuente */
+    -fx-font-family: "Arial"; /* Familia de fuente */
+}
+
+/* Estilos para cada texto específico */
+#añadirText {
+    -fx-fill: #2196F3; /* Color del texto para "AÑADIR MOTO" */
+}
+
+#venderText {
+    -fx-fill: #FF5722; /* Color del texto para "VENDER MOTO" */
+}
+
+#infoText {
+    -fx-fill: #9C27B0; /* Color del texto para "INFORMACION STOCK" */
+}
